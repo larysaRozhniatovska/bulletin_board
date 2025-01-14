@@ -14,7 +14,20 @@ use Illuminate\Database\Eloquent\Model;
 class Advert extends Model
 {
     use HasFactory;
-
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'title',
+        'description',
+        'views',
+        'price',
+        'user_id',
+        'category_id',
+        'city_id',
+    ];
     public function photos(){
         return $this->hasMany(Photo::class);
     }

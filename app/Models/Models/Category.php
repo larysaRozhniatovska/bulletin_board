@@ -9,6 +9,16 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'name',
+        'description',
+        'photo',
+    ];
     public function adverts(){
         return $this->hasMany(Advert::class);
     }
